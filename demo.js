@@ -63,7 +63,7 @@
     }
 
     function initCounters() {
-        i = j = k = l = m = n = 0;
+        i = j = k = l = m = 0;
     }
 
     function createGrid() {
@@ -107,25 +107,25 @@
         // Fade blocks...
 
         // ... with alpha 1 colors
-        if (i >= 2 && j < numLines) {
+        if (i > 0 && j < numLines) {
             drawLine(j, 'alpha1');
             j = j + 1;
         }
 
         // ... with alpha 2 colors
-        if (j >= 3 && k < numLines) {
+        if (j > 1 && k < numLines) {
             drawLine(k, 'alpha2');
             k = k + 1;
         }
 
         // ... with alpha 3 colors
-        if (k >= 4 && l < numLines) {
+        if (k > 2 && l < numLines) {
             drawLine(l, 'alpha3');
             l = l + 1;
         }
 
         // ... with white
-        if (l >= 5 && m < numLines) {
+        if (l > 3 && m < numLines) {
             drawLine(m, 'white');
             m = m + 1;
         }
