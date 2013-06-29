@@ -26,31 +26,31 @@
         normal: 'hsl(188,76%,37%)',
         alpha1: 'hsl(188,76%,52%)',
         alpha2: 'hsl(188,76%,77%)',
-        alpha3: 'hsl(188,76%,100%)',
+        alpha3: 'hsl(188,76%,90%)',
         white: background
     }, {
         normal: 'hsl(187,52%,52%)',
         alpha1: 'hsl(187,52%,67%)',
         alpha2: 'hsl(187,52%,82%)',
-        alpha3: 'hsl(187,52%,100%)',
+        alpha3: 'hsl(187,52%,90%)',
         white: background
     }, {
         alpha1: 'hsla(177,45%,65%)',
         normal: 'hsla(177,45%,77%)',
         alpha2: 'hsla(177,45%,90%)',
-        alpha3: 'hsla(177,45%,100%)',
+        alpha3: 'hsla(177,45%,95%)',
         white: background
     }, {
         normal: 'hsl(172,48%,75%)',
         alpha1: 'hsl(172,48%,83%)',
         alpha2: 'hsl(172,48%,91%)',
-        alpha3: 'hsl(172,48%,100%)',
+        alpha3: 'hsl(172,48%,96%)',
         white: background
     }, {
         normal: 'hsl(172,51%,85%)',
         alpha1: 'hsl(172,51%,88%)',
         alpha2: 'hsl(172,51%,91%)',
-        alpha3: 'hsl(172,51%,100%)',
+        alpha3: 'hsl(172,51%,96%)',
         white: background
     }];
 
