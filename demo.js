@@ -16,9 +16,9 @@
     gWidth = c.width;
     gHeight = c.height;
     nbBlocks = 80;
-    blockSize = gWidth / nbBlocks;
-    blocksPerLine = gWidth / blockSize;
-    numLines = gHeight / blockSize;
+    blockSize = Math.floor(gWidth / nbBlocks);
+    blocksPerLine = Math.floor(gWidth / blockSize);
+    numLines = Math.floor(gHeight / blockSize);
 
     // Palette from http://www.colourlovers.com/palette/617935/Dutch_Seas
     background = '#fff',
