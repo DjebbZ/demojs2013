@@ -1,49 +1,61 @@
 (function () {
+    /* VARIABLES */
+    var c, ctx,
+        grid, gWidth, gHeight,
+        nbBlocks, blockSize,
+        blocksPerLine, numLines,
+        colors, background,
+        i, j, k, l, m, n;
+
     /* INITIALIZATION */
-    var c = document.getElementById('c'),
-        ctx = c.getContext("2d"),
-        grid = [],
-        gWidth = c.width,
-        gHeight = c.height,
-        blockSize = 10,
-        blocksPerLine = gWidth / blockSize,
-        numLines = gHeight / blockSize,
-        i, j, k, l, m, n,
+    c = document.getElementById('c');
+    ctx = c.getContext("2d");
+    grid = [];
+    c.width = window.innerWidth;
+    c.height = window.innerHeight;
+    gWidth = c.width;
+    gHeight = c.height;
+    nbBlocks = 80;
+    blockSize = gWidth / nbBlocks;
+    blocksPerLine = gWidth / blockSize;
+    numLines = gHeight / blockSize;
 
-        // Palette from http://www.colourlovers.com/palette/617935/Dutch_Seas
-        colors = [{
-            normal: 'hsl(188,76%,37%)',
-            alpha1: 'hsl(188,76%,52%)',
-            alpha2: 'hsl(188,76%,77%)',
-            alpha3: 'hsl(188,76%,100%)',
-            white: '#fff'
-        }, {
-            normal: 'hsl(187,52%,52%)',
-            alpha1: 'hsl(187,52%,67%)',
-            alpha2: 'hsl(187,52%,82%)',
-            alpha3: 'hsl(187,52%,100%)',
-            white: '#fff'
-        }, {
-            alpha1: 'hsla(177,45%,65%)',
-            normal: 'hsla(177,45%,77%)',
-            alpha2: 'hsla(177,45%,90%)',
-            alpha3: 'hsla(177,45%,100%)',
-            white: '#fff'
-        }, {
-            normal: 'hsl(172,48%,75%)',
-            alpha1: 'hsl(172,48%,83%)',
-            alpha2: 'hsl(172,48%,91%)',
-            alpha3: 'hsl(172,48%,100%)',
-            white: '#fff'
-        }, {
-            normal: 'hsl(172,51%,85%)',
-            alpha1: 'hsl(172,51%,88%)',
-            alpha2: 'hsl(172,51%,91%)',
-            alpha3: 'hsl(172,51%,100%)',
-            white: '#fff'
-        }];
 
-    init();
+    // Palette from http://www.colourlovers.com/palette/617935/Dutch_Seas
+    background = '#fff',
+    colors = [{
+        normal: 'hsl(188,76%,37%)',
+        alpha1: 'hsl(188,76%,52%)',
+        alpha2: 'hsl(188,76%,77%)',
+        alpha3: 'hsl(188,76%,100%)',
+        white: background
+    }, {
+        normal: 'hsl(187,52%,52%)',
+        alpha1: 'hsl(187,52%,67%)',
+        alpha2: 'hsl(187,52%,82%)',
+        alpha3: 'hsl(187,52%,100%)',
+        white: background
+    }, {
+        alpha1: 'hsla(177,45%,65%)',
+        normal: 'hsla(177,45%,77%)',
+        alpha2: 'hsla(177,45%,90%)',
+        alpha3: 'hsla(177,45%,100%)',
+        white: background
+    }, {
+        normal: 'hsl(172,48%,75%)',
+        alpha1: 'hsl(172,48%,83%)',
+        alpha2: 'hsl(172,48%,91%)',
+        alpha3: 'hsl(172,48%,100%)',
+        white: background
+    }, {
+        normal: 'hsl(172,51%,85%)',
+        alpha1: 'hsl(172,51%,88%)',
+        alpha2: 'hsl(172,51%,91%)',
+        alpha3: 'hsl(172,51%,100%)',
+        white: background
+    }];
+
+    createGrid();
     draw();
 
     function waterColor() {
@@ -55,12 +67,12 @@
         i = j = k = l = m = n = 0;
     }
 
-    function init() {
+    function createGrid() {
         initCounters();
 
-        /* GRID of blocks */
+        /* grid of blocks */
         for (i = 0; i < blocksPerLine; i += 1) {
-            for (j = 0; j < blocksPerLine; j += 1) {
+            for (j = 0; j < numLines; j += 1) {
                 grid.push({
                     color: waterColor(),
                     x: j * blockSize,
