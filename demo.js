@@ -96,8 +96,7 @@
         }
     }
 
-    function draw(timestamp) {
-
+    function drawWave () {
         // Display with normal colors
         if (i < numLines) {
             // Draw one line of blocks
@@ -134,17 +133,13 @@
 
         // End fading
         // **********
+    }
 
+    function draw(timestamp) {
+        requestAnimationFrame(draw);
         // Draw only as long as we have blocks in the grid
         if (m < numLines) {
-            requestAnimationFrame(draw);
+            drawWave();
         }
-
-        // console.log("i:"+i);
-        // console.log("j:"+j);
-        // console.log("k:"+k);
-        // console.log("l:"+l);
-        // console.log("m:"+m);
-        // console.log("n:"+n);
     }
 })();
