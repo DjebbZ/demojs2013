@@ -20,7 +20,6 @@
     blocksPerLine = gWidth / blockSize;
     numLines = gHeight / blockSize;
 
-
     // Palette from http://www.colourlovers.com/palette/617935/Dutch_Seas
     background = '#fff',
     colors = [{
@@ -135,11 +134,9 @@
         // **********
     }
 
-    function draw(timestamp) {
+    function draw() {
         requestAnimationFrame(draw);
         // Draw only as long as we have blocks in the grid
-        if (m < numLines) {
-            drawWave();
-        }
+        drawWave();
     }
 })();
